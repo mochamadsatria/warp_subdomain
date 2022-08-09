@@ -1,4 +1,4 @@
-# Subdomain-warp
+# warp_subdomain
 
 A simple subdomain parser middleware for [Warp](https://github.com/seanmonstar/warp).
 

@@ -6,6 +6,10 @@ description = "A Subdomain parser for the warp web server framework"
 repository = "https://github.com/mochamadsatria/warp_subdomain"
 keywords = ["warp", "subdomain", "middleware"]
 license = "MIT"
+exclude = [
+    ".gitignore",
+    ".vscode"
+]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 

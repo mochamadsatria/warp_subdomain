@@ -2,36 +2,37 @@
 //!
 //! # Example Usage
 //! ## Pass the subdomains to function
-//! ```use std::collections::HashMap;
-//!use std::sync::Arc;
+//! ```rust
+//! use std::collections::HashMap;
+//! use std::sync::Arc;
 //!
-//!use warp::Filter;
+//! use warp::Filter;
 //!
-//!use warp_subdomain::with_subdomain;
+//! use warp_subdomain::with_subdomain;
 //!
-//!async fn query(
-//!    _query: HashMap<String, String>,
-//!    subdomain: Arc<Vec<String>>,
-//!) -> Result<impl warp::Reply, warp::Rejection> {
-//!    // get last subdomain
-//!    let subdomain_0 = subdomain.get(0);
+//! async fn query(
+//!     _query: HashMap<String, String>,
+//!     subdomain: Arc<Vec<String>>,
+//! ) -> Result<impl warp::Reply, warp::Rejection> {
+//!     // get last subdomain
+//!     let subdomain_0 = subdomain.get(0);
 //!
-//!    Ok(warp::reply::with_status(
-//!        subdomain_0.unwrap().to_string(),
-//!        warp::http::StatusCode::FOUND,
-//!    ))
-//!}
+//!     Ok(warp::reply::with_status(
+//!         subdomain_0.unwrap().to_string(),
+//!         warp::http::StatusCode::FOUND,
+//!     ))
+//! }
 //!
-//!#[tokio::main]
-//!async fn main() {
-//!    let route = warp::path!("home")
-//!        .and(warp::get())
-//!        .and(warp::query::<HashMap<String, String>>())
-//!        .and(with_subdomain())
-//!        .and_then(query);
+//! #[tokio::main]
+//! async fn main() {
+//!     let route = warp::path!("home")
+//!         .and(warp::get())
+//!         .and(warp::query::<HashMap<String, String>>())
+//!         .and(with_subdomain())
+//!         .and_then(query);
 //!
-//!    warp::serve(route).run(([127, 0, 0, 1], 3030)).await
-//!}
+//!     warp::serve(route).run(([127, 0, 0, 1], 3030)).await
+//! }
 //!```
 use std::sync::Arc;
 

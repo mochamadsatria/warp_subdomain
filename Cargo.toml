@@ -25,6 +25,7 @@ criterion = "0.3.6"
 [[bench]]
 name = "benchmark"
 harness = false
+path="benches/benchmark.rs"
 
 [features]
 default = ["warp", "tokio/test-util", "tokio/macros"]

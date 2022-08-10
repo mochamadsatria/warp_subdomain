@@ -1,10 +1,10 @@
 # warp_subdomain
 
-A simple subdomain parser middleware for [Warp](https://github.com/seanmonstar/warp).
+A simple subdomain parser middleware for [Warp](https://github.com/seanmonstar/warp) web server framework with nano second processing time. 🚀🚀
 
 ## Usage
 
-```
+```rust
 ... warp route
 .and(warp_subdomain::with_subdomain)`
 ... route handler
@@ -12,7 +12,7 @@ A simple subdomain parser middleware for [Warp](https://github.com/seanmonstar/w
 
 ## Example
 
-```
+```rust
 use std::collections::HashMap;
 use std::sync::Arc;
 
@@ -46,11 +46,16 @@ async fn main() {
 
 ```
 
-If host eg. <strong>super-alloy.api.cilen.com.</strong>
-<br/>
-This middleware will return `Arc::Vec<String> = vec!["super-alloy", "api"]`
+```rust
+/// If host eg. super-alloy.api.cilen.com.
+/// This middleware will return
+vec!["super-alloy", "api"]
+```
 
-This middleware also works for localhost that have port in host header. eg. <strong>api.localhost:3999</strong>
+```rust
+/// This middleware also works for localhost that have port in host header.
+/// eg. api.localhost:3999
+```
 
 ## Note
 
@@ -58,5 +63,5 @@ This middlewares will return value with type `Arc<Vec<String>>`
 
 ## Misc
 
-- [API Documentation]()
-- [Examples]()
+- [API Documentation](https://docs.rs/warp_subdomain/1.1.0/warp_subdomain/)
+- [Examples](https://github.com/mochamadsatria/warp_subdomain/tree/main/examples)

@@ -1,20 +1,30 @@
 [package]
 name = "warp_subdomain"
-version = "1.0.0"
+version = "1.1.0"
 edition = "2021"
-description = "A Subdomain parser for the warp web server framework"
+description = "A simple subdomain parser for Warp web server framework with nano second processing time."
 repository = "https://github.com/mochamadsatria/warp_subdomain"
 keywords = ["warp", "subdomain", "middleware"]
 license = "MIT"
 exclude = [
     ".gitignore",
-    ".vscode"
+    ".vscode",
+    "benches/**",
+    "examples/**"
 ]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-regex = "1.6.0"
 tokio = { version = "1.20.1", features = ["test-util", "macros"] }
-warp = "0.3.2"
+warp = { version = "0.3.2", optional = true }
 
+[dev-dependencies]
+criterion = "0.3.6"
+
+[[bench]]
+name = "benchmark"
+harness = false
+
+[features]
+default = ["warp", "tokio/test-util", "tokio/macros"]

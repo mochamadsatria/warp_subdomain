@@ -28,4 +28,7 @@ harness = false
 path="benches/benchmark.rs"
 
 [features]
-default = ["warp", "tokio/test-util", "tokio/macros"]
+default = ["warp", "tokio/macros"]
+
+[lib]
+doctest = false

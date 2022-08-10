@@ -63,5 +63,5 @@ This middlewares will return value with type `Arc<Vec<String>>`
 
 ## Misc
 
-- [API Documentation](https://docs.rs/warp_subdomain/1.1.0/warp_subdomain/)
+- [API Documentation](https://docs.rs/warp_subdomain)
 - [Examples](https://github.com/mochamadsatria/warp_subdomain/tree/main/examples)

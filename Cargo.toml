@@ -1,6 +1,6 @@
 [package]
 name = "warp_subdomain"
-version = "1.1.0"
+version = "1.2.0"
 edition = "2021"
 description = "A simple subdomain parser for Warp web server framework with nano second processing time."
 repository = "https://github.com/mochamadsatria/warp_subdomain"
@@ -28,7 +28,7 @@ harness = false
 path="benches/benchmark.rs"
 
 [features]
-default = ["warp", "tokio/macros"]
+default = ["warp"]
 
 [lib]
 doctest = false
